@@ -1,4 +1,4 @@
 container:
   image: workalexsh/sendbox:hello-app
 
-replicaCount: 2
+replicaCount: 1

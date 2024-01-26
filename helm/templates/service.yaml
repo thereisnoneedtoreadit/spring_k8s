@@ -5,9 +5,8 @@ metadata:
 spec:
   selector:
     app: hello-app
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - protocol: TCP
       port: 8080
       targetPort: 8080
-      nodePort: 30007

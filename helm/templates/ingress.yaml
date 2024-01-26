@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hello-app
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  rules:
+    - host: miniku.be
+      http:
+        paths:
+          - path: /hello-app(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: hello-app
+                port:
+                  number: 8080

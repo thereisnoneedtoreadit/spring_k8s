@@ -19,3 +19,6 @@ spec:
         image: {{ .Values.container.image }}
         ports:
         - containerPort: 8080
+        env:
+          - name: logging_level_org_springframework_web
+            value: debug
