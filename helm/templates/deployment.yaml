@@ -5,7 +5,7 @@ metadata:
   labels:
     app: hello-app
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: hello-app
@@ -15,7 +15,7 @@ spec:
         app: hello-app
     spec:
       containers:
-        - name: hello-app
-          image: workalexsh/sendbox:hello-app
-          ports:
-            - containerPort: 8080
+      - name: hello-app
+        image: {{ .Values.container.image }}
+        ports:
+        - containerPort: 8080
