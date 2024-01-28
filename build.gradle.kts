@@ -38,7 +38,9 @@ jib {
     }
     to {
         image = "hello-app"
-        tags = setOf(project.version.toString())
+        project.afterEvaluate {
+            tags = setOf(project.version.toString())
+        }
     }
 }
 
