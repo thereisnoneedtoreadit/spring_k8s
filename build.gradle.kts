@@ -25,13 +25,6 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions {
-        freeCompilerArgs += "-Xjsr305=strict"
-        jvmTarget = "21"
-    }
-}
-
 jib {
     from {
         image = "openjdk:21-jdk-slim"
@@ -41,6 +34,13 @@ jib {
         project.afterEvaluate {
             tags = setOf(project.version.toString())
         }
+    }
+}
+
+tasks.withType<KotlinCompile> {
+    kotlinOptions {
+        freeCompilerArgs += "-Xjsr305=strict"
+        jvmTarget = "21"
     }
 }
 
