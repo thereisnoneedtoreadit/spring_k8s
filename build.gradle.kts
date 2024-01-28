@@ -38,6 +38,7 @@ jib {
     }
     to {
         image = "hello-app"
+        tags = setOf(project.version.toString())
     }
 }
 
