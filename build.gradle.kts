@@ -7,6 +7,7 @@ plugins {
     id("nebula.release") version "19.0.4"
     kotlin("jvm") version "1.9.22"
     kotlin("plugin.spring") version "1.9.22"
+    id("maven-publish")
 }
 
 group = "com.example"
@@ -17,6 +18,7 @@ java {
 
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 
 dependencies {
